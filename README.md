@@ -12,7 +12,7 @@ Some notes I am keeping:
 
 Web Frontend (Modern Approach)
 How:
-•	Write the game logic as a C++ library. < br/ >
+•	Write the game logic as a C++ library. <br/>
 •	Use Emscripten to compile the C++ to WebAssembly.
 •	Build a web frontend (HTML/JS/CSS) that interacts with the C++ logic.
 •	Use HTML buttons and images for UI.
