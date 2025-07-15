@@ -18,9 +18,6 @@
     <ClCompile Include="ConsoleApplicationPlayingAround.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Testing.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="ThomasTips.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

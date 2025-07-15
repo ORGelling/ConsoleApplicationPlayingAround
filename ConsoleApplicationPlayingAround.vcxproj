@@ -128,7 +128,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ConsoleApplicationPlayingAround.cpp" />
-    <ClCompile Include="Testing.cpp" />
     <ClCompile Include="ThomasTips.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
