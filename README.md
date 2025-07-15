@@ -16,7 +16,7 @@ Web Frontend (Modern Approach)<br/>
 •	Build a web frontend (HTML/JS/CSS) that interacts with the C++ logic.<br/>
 •	Use HTML buttons and images for UI.
 
-How Would You Use SDL3 for a Card Game?<br/>
+Using SDL3<br/>
 •	Window and Rendering:<br/>
     Use SDL3 to create a window and render 2D graphics (such as card images and buttons).<br/>
 •	Image Loading:<br/>
@@ -26,7 +26,7 @@ How Would You Use SDL3 for a Card Game?<br/>
 •	Drawing Cards and Buttons:<br/>
     Draw card images at specific positions. Draw buttons as images or rectangles, and detect clicks.<br/>
 •	Game Logic Integration:<br/>
-    Connect your existing C++ game logic to the SDL3 event loop and rendering code.<br/>
+    Connect your existing C++ game logic to the SDL3 event loop and rendering code.
 
 Steps for SDL3:<br/>
 •	Install SDL3 and SDL_image (via vcpkg, package manager, or from source).<br/>
