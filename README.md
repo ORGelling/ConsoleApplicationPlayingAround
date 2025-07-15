@@ -30,7 +30,7 @@ How Would You Use SDL3 for a Card Game?
     Connect your existing C++ game logic to the SDL3 event loop and rendering code.
 
 Steps for SDL3:
-•	Install SDL3 and SDL_image (via vcpkg, package manager, or from source).
+•	Install SDL3 and SDL_image (via vcpkg, package manager, or from source).\n
 •	Initialize SDL3 in your main() function.
 •	Load card images (e.g., "images/2H.png", "images/AS.png").
 •	Render cards and buttons using SDL_RenderCopy.
