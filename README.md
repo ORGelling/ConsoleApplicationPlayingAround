@@ -41,3 +41,5 @@ Steps for SDL3:<br/>
 This video is a general tutorial for making simple C++ games I am going to be watching and hopefully using
 
 https://www.youtube.com/watch?v=XOs2qynEmNE
+
+For my upcoming hearing aid project I should look into sonic radar 2, a program that does exactly what I aim to do
