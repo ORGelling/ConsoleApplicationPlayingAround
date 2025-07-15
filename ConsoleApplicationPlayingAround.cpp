@@ -12,7 +12,7 @@ using namespace std;
 struct Card {
 	string rank;
 	string suit;
-	int points;
+	int points; // Points for blackjack
 	int sort;
 };
 
@@ -24,12 +24,60 @@ enum class Suit {
 	Clubs, Diamonds, Hearts, Spades
 };
 
+
+//Trying to wrap all of this in classes now. WIP.
+
+// Forward declarations for classes
 class Deck {
-	
+private:
+	int numDecks;
+	int totalCards;
+	Card* deck;
+
+public:
+	Deck(int numDecks = 1) : numDecks(numDecks), totalCards(52 * numDecks) {
+		deck = createDeck(numDecks);
+	}
+	~Deck() {
+		delete[] deck; // Clean up memory
+	}
+	Card* getDeck() {
+		return deck;
+	}
+	int getTotalCards() const {
+		return totalCards;
+	}
 }
 
 class Hand {
-	
+private:
+	Card* hand;
+	int handSize;
+
+public:
+	Hand(int size) : handSize(size) {
+		hand = drawHand(handSize); // Initialize hand with the specified size
+	}
+	~Hand() {
+		delete[] hand; // Clean up memory
+	}
+	void addCard(const Card& card, int index) {
+		if (index < handSize) {
+			hand[index] = card; // Add card to the hand at the specified index
+		}
+	}
+	void show() const {
+		for (int i = 0; i < handSize; i++) {
+			cout << hand[i].rank << hand[i].suit << " ";
+		}
+		cout << endl;
+	}
+	int getScore() const {
+		int score = 0;
+		for (int i = 0; i < handSize; i++) {
+			score += hand[i].points; // Sum the points of each card in the hand
+		}
+		return score;
 }
 */
 
