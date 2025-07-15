@@ -11,10 +11,10 @@ using a web frontend. Both of these approaches will be useful for my future proj
 Some notes I am keeping:
 
 Web Frontend (Modern Approach)
-•	How:
-•	Write your game logic as a C++ library.
-•	Use Emscripten to compile your C++ to WebAssembly.
-•	Build a web frontend (HTML/JS/CSS) that interacts with your C++ logic.
+How:
+•	Write the game logic as a C++ library.
+•	Use Emscripten to compile the C++ to WebAssembly.
+•	Build a web frontend (HTML/JS/CSS) that interacts with the C++ logic.
 •	Use HTML buttons and images for UI.
 
 How Would You Use SDL3 for a Card Game?
@@ -30,8 +30,8 @@ How Would You Use SDL3 for a Card Game?
     Connect your existing C++ game logic to the SDL3 event loop and rendering code.
 
 Steps for SDL3:
-•	Install SDL3 and SDL_image (via vcpkg, package manager, or from source).\n
-•	Initialize SDL3 in your main() function.
+•	Install SDL3 and SDL_image (via vcpkg, package manager, or from source).
+•	Initialize SDL3 in the main() function.
 •	Load card images (e.g., "images/2H.png", "images/AS.png").
 •	Render cards and buttons using SDL_RenderCopy.
 •	Handle user input (mouse clicks, etc.) to let users pick cards or press buttons.
