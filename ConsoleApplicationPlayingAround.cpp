@@ -28,7 +28,9 @@ enum class Suit {
 //Trying to wrap all of this in classes now. WIP.
 
 // Forward declarations for classes
+
 class Deck {
+
 private:
 	int numDecks;
 	int totalCards;
@@ -50,6 +52,7 @@ public:
 }
 
 class Hand {
+
 private:
 	Card* hand;
 	int handSize;
