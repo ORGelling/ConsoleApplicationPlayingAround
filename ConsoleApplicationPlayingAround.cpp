@@ -35,35 +35,6 @@ struct Card {
 	int sort;
 };
 
-/*
-Card* createDeck(int size = 1) {
-	// Define deck
-	string standardDeck[52] = {
-			"2H", "3H", "4H", "5H", "6H", "7H", "8H", "9H", "10H", "JH", "QH", "KH", "AH",
-			"2D", "3D", "4D", "5D", "6D", "7D", "8D", "9D", "10D", "JD", "QD", "KD", "AD",
-			"2C", "3C", "4C", "5C", "6C", "7C", "8C", "9C", "10C", "JC", "QC", "KC", "AC",
-			"2S", "3S", "4S", "5S", "6S", "7S", "8S", "9S", "10S", "JS", "QS", "KS", "AS"
-	};
-
-	int deckPoints[52] = {
-		2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 10, // Hearts
-		2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 10, // Diamonds
-		2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 10, // Clubs
-		2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 10  // Spades
-	};
-
-	Card* deck = new Card[52*size];
-
-	for (int j = 0; j < size; j++) // Create multiple decks if needed
-		for (int i = 0; i < 52; i++) {
-			deck[i+52*j].name = standardDeck[i];
-			deck[i+52*j].value = deckPoints[i];
-		}
-
-	return deck;
-};
-*/
-
 Card* createDeck(int numDecks = 1) {
 	const char* ranks[] = { "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A" };
 	const char* suits[] = { "C", "D", "H", "S" };
@@ -170,6 +141,7 @@ void showScore(Card* hand, int handSize) {
 	cout << "\n" << score << endl; // Display the total score
 }
 
+
 int getScore(Card* hand, int handSize) {
 	int score = 0;
 	for (int i = 0; i < handSize; i++) {
@@ -187,168 +159,7 @@ void showHandSplit(Card* hand, int handSize) {
 	}
 }
 
-/*
-Card* drawCard(Card** currentHand, int& handSize, Card** currentDeck, int& deckSize, int draws = 1) {
 
-	if (deckSize < draws) {
-		cout << "Not enough cards left in the deck!" << endl;
-		return *currentHand; // Return same hand if no cards are left in the deck
-	}
-
-	Card* newHand = new Card[handSize + draws]; // Create a new hand with one more card
-	for (int i = 0; i < handSize; i++) {
-		newHand[i] = (*currentHand)[i]; // Copy existing cards to the new hand
-	}
-
-	for (int i = 0; i < draws; i++) {
-		int cardPick = rand() % deckSize; // Randomly pick a card from the deck
-		Card card = (*currentDeck)[cardPick]; // Create card as a temporary variable
-
-		newHand[handSize + i] = card; // Add the picked card to the new hand
-
-		Card* newDeck = new Card[deckSize - 1]; // Create a new deck without the picked card
-		for (int j = 0, k = 0; j < deckSize; j++) {
-			if (j != cardPick) { // Skip the picked card
-				newDeck[k++] = (*currentDeck)[j]; // Copy the remaining cards to the new deck
-			}
-		}
-		delete[] * currentDeck; // Clean up memory for the old deck
-		*currentDeck = newDeck; // Update the deck to the new deck without the picked card
-		deckSize--; // Decrease deck size after picking a card
-	}
-
-	delete[] * currentHand; // Clean up memory for the old hand
-	handSize += draws; // Increase hand size after picking a card
-	return newHand;
-}
- 
-sort(hand, hand + handSize, [](const Card& a, const Card& b) {
-	return a.suit < b.suit;
-	});
-	
-int clubs = 0, diamonds = 0, hearts = 0, spades = 0;
-for (int i = 0; i < handSize; i++) { // Count cards in suits
-	if (hand[i].suit == "C") 
-		clubs += 1;
-	else if (hand[i].suit == "D")
-		diamonds += 1;
-	else if (hand[i].suit == "H")
-		hearts += 1;
-	else if (hand[i].suit == "S")
-		spades += 1;
-}
-
-sort(hand, hand + clubs, [](const Card& a, const Card& b) {
-	return a.sort < b.sort; // Sort by type
-	});
-sort(hand + clubs, hand + clubs + diamonds, [](const Card& a, const Card& b) {
-	return a.sort < b.sort; // Sort by type
-	});
-sort(hand + clubs + diamonds, hand + clubs + diamonds + hearts, [](const Card& a, const Card& b) {
-	return a.sort < b.sort; // Sort by type
-	});
-sort(hand + clubs + diamonds + hearts, hand + clubs + diamonds + hearts + spades, [](const Card& a, const Card& b) {
-	return a.sort < b.sort; // Sort by type
-	});
-
-int printHand(int handSize = 2, vector<int> hand = {0, 1}) {
-	cout << "Your hand is: \n\n";
-	for (int i = 0; i < handSize; i++) {
-		cout << deck[hand[i]] << " ";
-	}
-	cout << endl;
-	return 0;
-}
-
-int decks = 4; // Amount of decks to use
-	//cout << "How many decks do you want to use?\n" << endl;
-	//cin >> decks;
-
-	int deckSize = 52 * decks; // Total number of cards in the deck
-	Card* deck = createDeck(decks);
-
-	int handSize = 25; // Size of the hand to draw
-	Card* hand = drawHand(&deck, deckSize, handSize); // Draw a hand of 3 cards from the deck
-
-	cout << "\nHand:" << endl;
-	for (int i = 0; i < handSize; i++) {
-		cout << hand[i].rank << hand[i].suit << " ";
-		if (hand[i].suit != hand[i + 1].suit) {
-			cout << endl; // Print a new line if the suit changes
-		}
-	}
-	delete[] deck;
-	delete[] hand;
-*/
-
-/*
-int main() {
-	srand(time(0)); // Seed the random number generator
-	
-	int decks = 1; // Amount of decks to use
-	//cout << "How many decks do you want to use?\n" << endl;
-	//cin >> decks;
-
-	int deckSize = 52 * decks; // Total number of cards in the deck
-	Card* deck = createDeck(decks);
-
-	bool play = true; // Variable to control the game loop
-
-	while (play) {
-		//cout << &deckSize << " " << deckSize << endl; // Print the address of deckSize for debugging purposes
-
-		int handSize;
-		cout << "Hand size?\n" << endl;
-		cin >> handSize; // Get the size of the hand from user input
-		if (handSize == 0) {
-			cout << "Exiting the program." << endl;
-			//leave = true; // Set leave to true to exit the loop
-			break;
-		}
-
-		Card* hand = drawHand(&deck, deckSize, handSize); // Draw a hand of 2 cards from the deck
-
-		cout << "\nHand:" << endl;
-		for (int i = 0; i < handSize; i++) {
-			cout << hand[i].name << " ";
-		}
-		cout << "\nCards left in deck: " << deckSize << endl;
-
-		bool add = true; // Variable to control whether to add more cards to the hand
-		while (add) {
-			int drawCards;
-			cout << "\nDraw more cards?\n" << endl;
-			cin >> drawCards; // Get user input to decide whether to add a card or not
-			if (drawCards == 0) {
-				cout << "No more cards." << endl;
-				add = false; // Exit the loop for adding cards
-				break;
-			}
-			drawCardVoid(&hand, handSize, &deck, deckSize, drawCards); // Draw more cards from the deck
-
-			cout << "\nHand:" << endl;
-			for (int i = 0; i < handSize; i++) {
-				cout << hand[i].name << " ";
-			}
-			cout << "\nCards left in deck: " << deckSize << endl;
-		}
-		cout << "\nHand:" << endl;
-		for (int i = 0; i < handSize; i++) {
-			cout << hand[i].name << " ";
-		}
-
-		delete[] hand; // Clean up memory for the hand
-	}
-
-	cout << "\nRemaining cards in the deck:" << endl;
-	for (int i = 0; i < deckSize; i++) { // Print remaining cards in the deck
-			cout << deck[i].name << " ";
-		}
-
-	delete[] deck; // Clean up memory after use
-	return 0;
-};
-*/
 
 //Blackjack
 int Blackjack() {
