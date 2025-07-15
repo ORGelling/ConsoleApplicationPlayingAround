@@ -11,7 +11,6 @@ using a web frontend. Both of these approaches will be useful for my future proj
 Some notes I am keeping:
 
 Web Frontend (Modern Approach)<br/>
-How:<br/>
 •	Write the game logic as a C++ library. <br/>
 •	Use Emscripten to compile the C++ to WebAssembly.<br/>
 •	Build a web frontend (HTML/JS/CSS) that interacts with the C++ logic.<br/>
