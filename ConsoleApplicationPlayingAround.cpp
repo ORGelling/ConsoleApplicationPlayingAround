@@ -4,8 +4,6 @@
 #include <iostream>
 #include <cstdlib>
 #include <string>
-#include <vector>
-#include <tuple>
 #include <algorithm>
 #include <iterator>
 #include <ctime>
