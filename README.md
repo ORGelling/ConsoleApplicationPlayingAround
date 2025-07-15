@@ -16,6 +16,8 @@ Web Frontend (Modern Approach)<br/>
 •	Build a web frontend (HTML/JS/CSS) that interacts with the C++ logic.<br/>
 •	Use HTML buttons and images for UI.
 
+https://www.youtube.com/watch?v=xWdkt6KSirw
+
 Using SDL3<br/>
 •	Window and Rendering:<br/>
     Use SDL3 to create a window and render 2D graphics (such as card images and buttons).<br/>
@@ -35,3 +37,7 @@ Steps for SDL3:<br/>
 •	Render cards and buttons using SDL_RenderCopy.<br/>
 •	Handle user input (mouse clicks, etc.) to let users pick cards or press buttons.<br/>
 •	Update the display as the game state changes.
+
+This video is a general tutorial for making simple C++ games I am going to be watching and hopefully using
+
+https://www.youtube.com/watch?v=XOs2qynEmNE
